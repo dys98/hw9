@@ -1,0 +1,135 @@
+<!-- Daisy Sanchez
+     COMP 20 Web Programming
+     Homework 9: JSON
+     30 March 2020 -->
+<!-- URL:  TODO -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 9: JSON</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Part 1: Create a JSON
+        setList = 
+        [
+            {
+                'Artist'  : 'Nathan Lane, Ernie Sabella, Jason Weaver, and Joseph Williams',
+                'Title' : 'Hakuna Matata',
+                'Genre'  : 'Musical',
+                'Year'   : '1994',
+            },
+            {
+                'Artist' : 'Dua Lipa',
+                'Title'  : 'Don\'t Start Now',
+                'Genre'  : 'Disco',
+                'Year'   : '2019',
+            },
+            {
+                'Artist' : 'The Weeknd',
+                'Title'  : 'Blinding Lights',
+                'Genre'  : 'Alternative R&B',
+                'Year'   : '2019',
+            },
+            {
+                'Artist' : 'Panic at the Disco',
+                'Title'  : 'Into the Unknown',
+                'Genre'  : 'Soundtrack',
+                'Year'   : '2019',
+            },
+            {
+                'Artist' : 'Donny Osmond and Chorus',
+                'Title'  : 'I\'ll Make a Man Out of You',
+                'Genre'  : 'Musical',
+                'Year'   : '1998',
+            },
+            {
+                'Artist' : 'Earth, Wind, and Fire',
+                'Title'  : 'September',
+                'Genre'  : 'Disco',
+                'Year'   : '1978',
+            },
+            {
+                'Artist' : 'Randy Newman',
+                'Title'  : 'You\'ve Got a Friend in Me',
+                'Genre'  : 'Soundtrack',
+                'Year'   : '1995',
+            },
+            {
+                'Artist' : 'Michael Jackson, Justin Timberlake',
+                'Title'  : 'Love Never Felt So Good',
+                'Genre'  : 'Disco',
+                'Year'   : '2014',
+            },
+            {
+                'Artist' : 'Auli\'i Cravalho',
+                'Title'  : 'How Far I\'ll Go',
+                'Genre'  : 'Musical',
+                'Year'   : '2016',
+            },
+            {
+                'Artist' : 'Idina Menzel',
+                'Title'  : 'Let It Go',
+                'Genre'  : 'Musical',
+                'Year'   : '2013',
+            }
+        ]
+
+        // Part 2: Serialize and Display
+        //document.write("<br><br>");
+        document.write("Part 2: Serialize and Display<br>");
+        list  = JSON.stringify(setList);
+        document.write(list +  "<br>");
+        
+
+        // Part 3: User friendly display
+        document.write("<br><br>");
+        document.write("Part 3: User Friendly Display<br>");
+        for( i=0; i<10; i++){
+            document.write (setList[i]["Title"] + "<br>");
+            document.write (setList[i]["Artist"] + "<br>");
+            document.write (setList[i]["Genre"] + "<br>");
+            document.write ("Released " + setList[i]["Year"] + "<br>");
+            document.write("<br>");
+        }
+        
+
+        
+        // Part 4: Filter Data
+        document.write("<br><br>");
+        document.write("Part 4: Filter Data <br>");
+
+        function showFilter(){
+            given = selGenre.value;
+            document.write("Filtered Song List: <br>");
+            for( i=0; i<10; i++){
+                if(given == setList[i]["Genre"]){
+                    document.write (setList[i]["Title"] + "<br>");
+                    document.write (setList[i]["Artist"] + "<br>");
+                    document.write (setList[i]["Genre"] + "<br>");
+                    document.write (" Released " + setList[i]["Year"] + "<br>");
+                    document.write("<br>");
+            }
+        }
+    }   
+    </script>
+
+    <form>
+
+        <br>
+
+        <select name='selGenre' id='selGenre'>
+            <option value='Disco'>Disco</option>
+            <option value='Alternative R&B'>Alternative R&B</option>
+            <option value='Soundtrack'>Soundtrack</option>
+            <option value='Musical'>Musical</option>
+        </select>
+
+        <br>
+
+        <input type="button" value="Filter" onclick="showFilter()">
+        <br>
+    </form>
+
+</body>
+</html>
