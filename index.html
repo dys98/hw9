@@ -87,9 +87,9 @@
         document.write("Part 3: User Friendly Display<br>");
         for( i=0; i<10; i++){
             document.write (setList[i]["Title"] + "<br>");
-            document.write (setList[i]["Artist"] + "<br>");
-            document.write (setList[i]["Genre"] + "<br>");
-            document.write ("Released " + setList[i]["Year"] + "<br>");
+            document.write ("Artist(s): " + setList[i]["Artist"] + "<br>");
+            document.write ("Genre: " + setList[i]["Genre"] + "<br>");
+            document.write (" Released: " + setList[i]["Year"] + "<br>");
             document.write("<br>");
         }
         
@@ -105,13 +105,13 @@
             for( i=0; i<10; i++){
                 if(given == setList[i]["Genre"]){
                     document.write (setList[i]["Title"] + "<br>");
-                    document.write (setList[i]["Artist"] + "<br>");
-                    document.write (setList[i]["Genre"] + "<br>");
-                    document.write (" Released " + setList[i]["Year"] + "<br>");
+                    document.write ("Artist(s): " + setList[i]["Artist"] + "<br>");
+                    document.write ("Genre: " + setList[i]["Genre"] + "<br>");
+                    document.write (" Released: " + setList[i]["Year"] + "<br>");
                     document.write("<br>");
+                }
             }
-        }
-    }   
+        }   
     </script>
 
     <form>
